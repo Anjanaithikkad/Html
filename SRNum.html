@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Square Root</title>
+    <style>
+        body {
+            font-family:sans-serif;
+            text-align:left;
+            padding: 20px;
+            background-color:#002C54;
+            color:#C5001A;
+        }
+    </style>
+</head>
+<body>
+    <h1>Square Root of a Number</h1>
+    <label for="number">Enter a number: </label>
+    <input type="number" id="number" required>
+    <button onclick="
+        var number = parseFloat(document.getElementById('number').value);
+        if (isNaN(number) || number < 0)
+        {
+            document.getElementById('result').textContent = 'Please enter a valid non-negative number.';
+        }
+        else 
+        {
+            var result = number ** 0.5;
+            document.getElementById('result').textContent = 'The square root of ' + number + ' is: ' + result;
+    	}
+    ">Calculate</button>
+    <p id="result"></p>
+</body>
+</html>
+
