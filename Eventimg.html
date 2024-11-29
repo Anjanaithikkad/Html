@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>
+Image & text
+</title>
+</head>
+<body>
+<h1 id="txt"> Beauty of Sea </h1>
+<img id="img1" onmouseover="myfunction1()" onmouseout="myfunction2()" src="Sea.jpeg">
+
+<script>
+function myfunction1()
+{
+	document.getElementById("img1").src="Sea2.jpeg";
+	document.getElementById("txt").innerHTML="SeaShore1";
+}
+function myfunction2()
+{
+	document.getElementById("img1").src="Sea.jpg";
+	document.getElementById("txt").innerHTML="SeaShore2";
+}
+</script>
+</body>
+</html>
