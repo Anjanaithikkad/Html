@@ -1,0 +1,98 @@
+<html>
+    <body>
+        
+    <h2>FILL HERE!!</h2>
+    <form name="form" method="post" onsubmit="return validateform()">
+        Name:<input type="text" name="name"  ><br> <br>
+        Email:<input type="text" name="mail"><br> <br>
+        Mobile no:<input type="tel" name="mob" id="tnob"><br> <br>
+        Username:<input type="text" name="user" ><br> <br>
+        Password:<input type="password" name="passcode"><br> <br>
+        Confirm Password:<input type="password" name="cpasscode"><br> <br>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset"> 
+        </form>
+        <script>
+            function validateform()
+            {
+                var nm=document.form.name.value;
+                var email=document.form.mail.value;
+                var at=email.indexOf("@");
+                var dot=email.lastIndexOf(".");
+                var mob=document.form.mob.value;
+                var user=document.form.user.value;
+                var passcode=document.form.passcode.value;
+                var cpasscode=document.form.cpasscode.value;
+                
+                if(nm=="")
+                {
+                    alert("Enter Name!!");
+                    document.form.Name.focus();
+                    return false;
+                }
+            if (email=="")
+                {
+                    alert("Enter Email!!");
+                    document.form.mail.focus();
+                    return false;
+                }
+            else if (at<1 ||dot<at+2||dot+2>=email.length)
+                {
+                    alert("Enter valid email !!");
+                    document.form.mail.focus();
+                    return false;
+
+                }
+                if(mob=="")
+                {
+                    alert("Enter mobile number");
+                document.form.mob.focus();
+                return false;
+                }
+                else if(isNaN(mob))
+                {
+                    alert("Enter valid mobile no");
+                document.form.mob.focus();
+                return false;
+                }
+                else if(mob.length!=10)
+                {
+                    alert("Enter mob no with 10 digits");
+                    document.form.mob.focus();
+                    return false;
+
+                }
+                if(user=="")
+                {
+                    alert("Enter User Name!!");
+                    document.form.user.focus();
+                    return false;
+                }
+                if(passcode=="")
+                { 
+                    alert("Enter the Password!!");
+                    return false;
+                }
+                else if(passcode.length<6)
+                {
+                    alert("Enter min 6 character password !!..");
+                    return false;
+                }
+                if(cpasscode=="")
+                {
+                    alert("Enter the password");
+                    return false;  
+                }
+                else if(cpasscode!=passcode)
+                {
+                    alert("Password must be same");
+                    return false;
+                    
+                }
+
+
+            }
+        </script>
+   
+    </body>
+</html>

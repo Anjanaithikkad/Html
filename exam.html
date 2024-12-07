@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <script>
+            function exam()
+            {
+                var m=0;
+                if(document.examForm.one.value=="b")
+                m=m+1;
+                if(document.examForm.two.value=="a")
+                m=m+1;
+                if(document.examForm.three.value=="a")
+                m=m+1;
+                if(document.examForm.four.value=="a")
+                m=m+1;
+                if(document.examForm.five.value=="a")
+                m=m+1;
+                if(document.examForm.six.value=="b")
+                m=m+1;
+                if(document.examForm.seven.value=="a")
+                m=m+1;
+                if(document.examForm.eight.value=="b")
+                m=m+1;
+                if(document.examForm.nine.value=="a")
+                m=m+1;
+                if(document.examForm.ten.value=="a")
+                m=m+1;
+        alert("Thankyou for attending!! \n score is: "+m+" out of 10");
+            }
+        </script>
+    </head>
+    <body>
+        <form name="examForm" onsubmit="return exam()" method="get"style="max-width: 600px; margin: 0 auto; 
+        padding: 20px;  background-color:  #e74c3c ; border-radius: 8px; ">
+            <h2>Online exam</h2>
+            Enter your name: <input type="text" name="nm">
+            <form>
+               
+                <p>1. The correct sequence of HTML tags for starting a webpage is -</p>
+                <input type="radio" name="one" value="a">a. Head, Title, HTML, body<br>
+                <input type="radio" name="one" value="b">b. HTML, Head, Title, Body <br>
+            
+               
+                <p>2. Which attribute is used to specify the URL in an anchor tag?</p>
+                <input type="radio" name="two" value="a">a. href<br>
+                <input type="radio" name="two" value="b">b. src<br>
+            
+                
+                <p>3.Which character is used to represent the closing of a tag in HTML? </p>
+                
+                <input type="radio" name="three" value="a">a. / <br>
+                <input type="radio" name="three" value="b">b. . <br>
+            
+                
+                <p>4.  HTML tags are enclosed in- </p>
+                <input type="radio" name="four" value="a">a. <> <br>
+                <input type="radio" name="four" value="b">b. {} <br>
+            
+               
+                <p>5. Which of the following tags is used for a list item in HTML?</p>
+                <input type="radio" name="five" value="a">a. li<br>
+                <input type="radio" name="five" value="b">b. item<br>
+            
+               
+                <p>6. Which of the following attribute is used to provide a unique name to an element? </p>
+                <input type="radio" name="six" value="a">a. class <br>
+                <input type="radio" name="six" value="b">b. id <br>
+            
+                
+                <p>7. Which tag is used to define an unordered list in HTML?</p>
+                <input type="radio" name="seven" value="a">a. ul<br>
+                <input type="radio" name="seven" value="b">b. ol<br>
+            
+                
+                <p>8.What are the types of unordered or bulleted list in HTML? </p>
+                <input type="radio" name="eight" value="a">a. polygon, triangle, circle <br>
+                <input type="radio" name="eight" value="b">b. disc, circle, square<br>
+            
+                
+                <p>9. What does CSS stand for?</p>
+                <input type="radio" name="nine" value="a">a. Cascading Style Sheets<br>
+                <input type="radio" name="nine" value="b">b. Colorful Style Sheets<br>
+            
+               
+                <p>10. An HTML program is saved by using the ____ extension. </p>
+                <input type="radio" name="ten" value="a">a. .html<br>
+                <input type="radio" name="ten" value="b">b. .hml<br>
+            <p>
+                <input type="submit" value="Submit" >
+                <input type="reset" value="Reset" id="">
+            </p>
+        </form>
+    </body>
+</html>
