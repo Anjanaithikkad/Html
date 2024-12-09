@@ -1,0 +1,155 @@
+<html>
+<head>
+  <title>Registration Form</title>
+</head> 
+<body bgcolor="#c39bd3"> 
+  
+  <form name="form" action="thankyou.html" method="post" onsubmit="return validateForm()" style="max-width: 600px; margin: 0 auto; padding: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.1); background-color: #4a235a ; border-radius: 8px; ">
+  
+    <h2 style="color:brown;">Registration Form</h2>
+    <h3>Student details</h3>
+    <label for="Name">Name:</label>
+    <input type="text" name="Name" id="Name"><br><br>
+
+    <label for="mail">Email:</label>
+    <input type="text" name="mail" id="mail"><br><br>
+
+    <label for="mob">Mob No:</label>
+    <input type="text" name="mob" id="mob" maxlength="10"><br><br>
+
+    <label for="user">Username:</label>
+    <input type="text" name="user" id="user"><br><br>
+
+    <label for="passcode">Password:</label>
+    <input type="password" name="passcode" id="passcode" maxlength="8"><br><br>
+
+    <label for="cpasscode">Confirm Password:</label>
+    <input type="password" name="cpasscode" id="cpasscode"><br><br>
+    
+    <h3>Course details</h3>
+    <label for="course">Qualified course:</label>
+    <input type="text" name="course" id="course"><br><br>
+
+    <label for="lbspass">LBS Password:</label>
+    <input type="password" name="lbspass" id="lbspass" maxlength="8"><br><br>
+    
+    <label for="clbspass">Confirm LBS Password:</label>
+    <input type="password" name="clbspass" id="clbspass"><br><br>
+    
+    <label for="photo">Upload qualified certificate:</label>
+    <input type="file" name="myfile" size="30"><br><br>
+    
+    <label for="university">University:</label><br>
+    <input type="checkbox" name="university[]" value="KTU University">KTU University<br>
+    <input type="checkbox" name="university[]" value="Calicut University">Calicut University<br>
+    <input type="checkbox" name="university[]" value="Central University">Central University<br>
+    <input type="checkbox" name="university[]" value="Others">Others<br><br>
+    
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+  </form>
+
+  <script>
+    function validateForm() {
+      var nm = document.form.Name.value;
+      var email = document.form.mail.value;
+      var at = email.indexOf("@");
+      var dot = email.indexOf(".");
+      var mob = document.form.mob.value;
+      var user = document.form.user.value;
+      var passcode = document.form.passcode.value;
+      var cpasscode = document.form.cpasscode.value;
+      var course = document.form.course.value;
+      var lbspass = document.form.lbspass.value;
+      var clbspass = document.form.clbspass.value;
+      
+      // Name validation
+      if (nm == "") {
+        alert("Enter name!!");
+        document.form.Name.focus();
+        return false;
+      }
+
+      // Email validation
+      if (email == "") {
+        alert("Enter email id");
+        document.form.mail.focus();
+        return false;
+      } else if (at < 1 || dot < at + 2 || dot + 2 >= email.length) {
+        alert("Please enter a valid email address");
+        document.form.mail.focus();
+        return false;
+      }
+
+      // Mobile number validation
+      if (mob == "") {
+        alert("Enter mobile number:");
+        document.form.mob.focus();
+        return false;
+      } else if (isNaN(mob)) {
+        alert("Enter a valid mobile number:");
+        document.form.mob.focus();
+        return false;
+      } else if (mob.length != 10) {
+        alert("Enter mobile number with 10 digits");
+        document.form.mob.focus();
+        return false;
+      }
+
+      // Username validation
+      if (user == "") {
+        alert("Enter user name!!");
+        document.form.user.focus();
+        return false;
+      }
+
+      // Password validation
+      if (passcode == "") {
+        alert("Enter the password!!");
+        return false;
+      } else if (passcode.length < 6) {
+        alert("Password must be at least 6 characters long!");
+        return false;
+      }
+
+      // Confirm password validation
+      if (cpasscode == "") {
+        alert("Confirm the password");
+        return false;
+      } else if (cpasscode !== passcode) {
+        alert("Password must be the same");
+        return false;
+      }
+      
+      // Course validation
+      if (course == "") {
+        alert("Enter course!!");
+        document.form.course.focus();
+        return false;
+      }
+      
+      // LBS Password validation
+      if (lbspass == "") {
+        alert("Enter the LBS password!!");
+        return false;
+      } else if (lbspass.length < 6) {
+        alert("LBS password must be at least 6 characters long!");
+        return false;
+      }
+
+      // Confirm LBS password validation
+      if (clbspass == "") {
+        alert("Confirm the LBS password");
+        return false;
+      } else if (clbspass !== lbspass) {
+        alert("LBS password must be the same");
+        return false;
+      }
+
+      return true; // All validations passed
+    }
+  </script>
+</body>
+</html>
+
